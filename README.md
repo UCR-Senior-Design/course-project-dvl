@@ -13,7 +13,7 @@
   <img alt="Tailwind CSS" src="https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white"/>
 </div>
 
-# Project Title
+# Resume 322
 
 To help new students create a better environment for making Resume
 - Alternative web apps other than Google Docs and others
@@ -34,17 +34,25 @@ An in-depth paragraph about your project and overview of use.
 
 ### Installing
 
-* How/where to download your program
-* Any modifications needed to be made to files/folders
+1. Clone the repo
+   ```sh
+   https://github.com/UCR-Senior-Design/course-project-dvl.git
+   ```
+2. Install NPM packages
+   ```sh
+   npm install
+   ```
 
 ### Executing program
 
-* How to run the program
-* Step-by-step bullets
+1. Go to client folder
+```sh
+cd .\client
 ```
-code blocks for commands
+2. Run NPM start
+```sh
+npm start
 ```
-
 ## Help
 
 Any advise for common problems or issues.
