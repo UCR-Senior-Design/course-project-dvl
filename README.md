@@ -1,3 +1,7 @@
+<p align="center">
+<img width="500" src="client/src/assets/DVLlogo.svg" alt="DVL Logo">
+</p>
+
 # Project Title
 
 Simple overview of use/purpose.
