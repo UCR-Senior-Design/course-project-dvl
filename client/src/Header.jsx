@@ -4,9 +4,9 @@ import { images } from "./constants";
 const Header = () => {
   return (
     <section>
-        <header className = "container mx-auto px-5 flex justify-between py-4 items-center">
+        <header className="py-1 px-6 flex justify-between items-center py-4 px-8 text-center bg-gray-800">
             <div>
-                <img src={images.DVLlogo} alt= "logo" />
+            <img src={images.DVLlogo} alt="brand Logo" height={100} width={100}></img>
             </div>
             <div className="flex gap-x-9 items-center">
               <ul className="flex gap-x-5">
