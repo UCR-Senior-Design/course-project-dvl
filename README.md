@@ -4,7 +4,11 @@
 
 # Project Title
 
-Simple overview of use/purpose.
+To help new students create a better environment for making Resume
+- Alternative web apps other than Google Docs and others
+- A place where students can experiment a little with Markdown and CSS
+- A tool where the user can convert their typed Markdown and CSS Resume into a working webpage
+
 
 ## Description
 
