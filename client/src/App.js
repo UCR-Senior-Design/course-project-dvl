@@ -7,8 +7,7 @@ import Templates from './Templates'
 
 function App() {
 
-  return (
-    
+  return (   
     <div>
       <HomePage />
     </div>

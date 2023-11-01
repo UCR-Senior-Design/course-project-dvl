@@ -4,7 +4,7 @@ import { images } from "./constants";
 const Header = () => {
   return (
     <section>
-        <header className="py-1 px-6 flex justify-between items-center py-4 px-8 text-center bg-gray-800">
+        <header className="flex justify-between items-center py-x px-8 text-center bg-gray-800">
             <div>
             <img src={images.DVLlogo} alt="brand Logo" height={100} width={100}></img>
             </div>
