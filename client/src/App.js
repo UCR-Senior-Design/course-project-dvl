@@ -7,7 +7,7 @@ import Templates from './Templates'
 function App() {
   return (
     <div className="App flex flex-col w-full h-full">
-      <HomePage />
+      <Login />
     </div>
   );
 }
