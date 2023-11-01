@@ -9,7 +9,7 @@ const Login = () => {
     }
   return (
     <div>
-        <div className="bg-gray-300 py-72 px-80">
+        <div className="bg-gray-300 py-60 px-60">
                 <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold"> Welcome Back! </h1>
                 <p className="pt-4 w-72 sm:w-72 md:w-96 leading-relaxed">  At DVL we are continually striving to improve accessibility of our products
                 and services. If you have any questions or suggestions regarding our services, we welcome your feedback. </p>
