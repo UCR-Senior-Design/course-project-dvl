@@ -36,9 +36,21 @@ An in-depth paragraph about your project and overview of use.
 
 1. Clone the repo
    ```sh
-   https://github.com/UCR-Senior-Design/course-project-dvl.git
+   git clone https://github.com/UCR-Senior-Design/course-project-dvl.git
    ```
-2. Install NPM packages
+2. Go to front end
+   ```sh
+   cd .\client
+   ```
+3. Install NPM packages
+   ```sh
+   npm install
+   ```
+4. Go to backend
+   ```sh
+   cd .\server
+   ```
+5. Install NPM packages
    ```sh
    npm install
    ```
@@ -62,8 +74,9 @@ command to run if program contains helper info
 
 ## Authors
 
-Contributors names and contact info
-
+Dennis Santoso  
+Chaiwat Wongsatjachock  
+Lester Lien
 
 ## Version History
 
