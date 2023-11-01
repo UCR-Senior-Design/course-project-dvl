@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from "styled-components"
+import editorContext from "../editorContext";
 
 const Container = styled.div`
   width: 50%;
@@ -18,8 +19,15 @@ const TextArea = styled.textarea`
 `;
 
 export function Layout(props) {
+
+  const { setMarkdownText } = useContext(editorContext);
+
+  const onInputChange = e => {
+    const newValue = e.currentTarget.value;
+    setMarkdownText(newValue);
+  }
   return <Container>
     <h1 className="font-bold text-xl text-center border-b-4 border-gray-500/40">Markdown Text</h1>
-    <TextArea />
+    <TextArea onChange={onInputChange}/>
   </Container>
-}
+};
