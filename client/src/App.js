@@ -6,7 +6,7 @@ import Templates from './Templates'
 function App() {
   return (
     <div className="App">
-      <Templates />
+      <Login />
     </div>
   );
 }
