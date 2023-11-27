@@ -3,16 +3,16 @@ import React from 'react'
 import HomePage from './HomePage';
 import Login from './Login';
 import Templates from './Templates'
-import Signin from './Signin'
+import Signup from './Signup'
 
 function App() {
 
   return (
     <div className="App flex flex-col w-full h-full">
-      <Signin />
+      <Signup />
     </div>
 
   );
 }
 
-export default Signin;
+export default Signup;

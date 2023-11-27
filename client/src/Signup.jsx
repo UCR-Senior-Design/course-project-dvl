@@ -8,6 +8,12 @@ const Login = () => {
         setChecked(!checked);
     }
 
+    const [checked2, setChecked2] = React.useState(false);
+
+    const handleChange2 = () => {
+        setChecked2(!checked2);
+    }
+
   return (
     <div>
         <div className="bg-gray-300 py-60 px-48">
@@ -47,11 +53,11 @@ const Login = () => {
                 </div>
 
                 <div className="mt-3">
-                    <Checkbox
+                    <Checkbox2
                         // style={{transform: "scale(5)",}}
-                        label = " Remember my email and password"
-                        value ={checked}
-                        onChange={handleChange}
+                        label2 = " Remember my email and password"
+                        value2 ={checked2}
+                        onChange2={handleChange2}
                         />
                 </div>
                 
@@ -69,6 +75,15 @@ const Checkbox = ({label, value, onChange}) => {
         <label>
             <input type = "checkbox" checked ={value} onChange={onChange} />
             {label}
+        </label>
+    )
+}
+
+const Checkbox2 = ({label2, value2, onChange2}) => {
+    return(
+        <label>
+            <input type = "checkbox" checked2 ={value2} onChange2={onChange2} />
+            {label2}
         </label>
     )
 }
