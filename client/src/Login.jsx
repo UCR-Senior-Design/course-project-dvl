@@ -2,6 +2,9 @@ import React from 'react'
 import { TEInput } from "tw-elements-react";
 import { useNavigate } from "react-router-dom";
 import MainLayout from './MainLayout'
+import HomeNav from './HomeNav';
+import Footer from './Footer';
+
 const Login = () => {
     
     const [checked, setChecked] = React.useState(false);
@@ -14,7 +17,11 @@ const Login = () => {
 
   return (
 
-        <div className="bg-gray-300 py-60 px-48">
+    <div className="bg-gray-300">
+    <div>
+        <HomeNav/>
+    </div>
+    <div className="py-60 px-48">
                 <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold"> Welcome Back! </h1>
                 <p className="pt-4 w-72 sm:w-72 md:w-96 leading-relaxed">  At DVL we are continually striving to improve accessibility of our products
                 and services. If you have any questions or suggestions regarding our services, we welcome your feedback. </p>
@@ -50,9 +57,11 @@ const Login = () => {
                 <p>New member? Sign up now {'>'}</p>
                 </div>
                 <button onClick={() => navigate("/HomePage")}>Home</button>
+                </div>
+                <div>
+            <Footer/>
           </div>
-
-
+          </div>
     
   );
 };

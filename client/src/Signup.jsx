@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { TEInput } from "tw-elements-react";
 import { useNavigate } from "react-router-dom";
 import MainLayout from './MainLayout';
+import HomeNav from './HomeNav';
+import Footer from './Footer';
 
 
 const Login = () => {
@@ -18,10 +20,12 @@ const Login = () => {
     }
     const navigate = useNavigate();
 
-
   return (
-
-        <div className="bg-gray-300 py-60 px-48">
+        <div className="bg-gray-300">
+            <div>
+                <HomeNav/>
+            </div>
+            <div className="py-60 px-48">
                 <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold"> Welcome to Resume 322 </h1>
                 <p className="pt-4 w-72 sm:w-72 md:w-96 leading-relaxed">  Resume 322 is commiteed to help new people in the industry to create a better environment for making Resume. </p>
                 <div>
@@ -71,6 +75,10 @@ const Login = () => {
                 <p>Already a member? Set them up now {'>'}</p>
                 </div>
                 <button onClick={() => navigate("/HomePage")}>Home</button>
+                </div>
+                <div>
+            <Footer/>
+          </div>
           </div>
 
   );
