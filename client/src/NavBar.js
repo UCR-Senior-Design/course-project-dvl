@@ -1,7 +1,5 @@
 import React from "react";
-
 import {Routes, Route} from 'react-router-dom';
-import Starting from "./Starting";
 import HomePage from "./HomePage";
 import Templates from './Templates';
 import Signup from './Signup';
@@ -12,7 +10,6 @@ function Navbar(){
     return(
         <nav className= "nav">
             <Routes>
-                <Route path="/Starting" element={<Starting/>}/> 
                 <Route path="/HomePage" element={<HomePage/>}/>
                 <Route path="/Templates" element={<Templates/>}/>
                 <Route path="/Login" element={<Login/>}/>

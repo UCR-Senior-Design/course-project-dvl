@@ -2,15 +2,16 @@ import React from 'react'
 import Header from './Header'
 import Footer from './Footer'
 import Navbar from './NavBar'
+import Starting from './Starting'
+import HomePage from './HomePage'
 
 const MainLayout = ({ children }) => {
-
   return (
     <div>
-        <Header />
+          <Starting/>
           <Navbar/>
           {children}
-        <Footer />
+        
     </div>
   )
 }
