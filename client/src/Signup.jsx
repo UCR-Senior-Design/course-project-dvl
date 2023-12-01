@@ -23,18 +23,18 @@ const Login = () => {
 
         <div className="bg-gray-300 py-60 px-48">
                 <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold"> Welcome to Resume 322 </h1>
-                <p className="pt-4 w-72 sm:w-72 md:w-96 leading-relaxed">  Resume 322 is commiteed to help new people int he industry to create a better environment for making Resume. </p>
+                <p className="pt-4 w-72 sm:w-72 md:w-96 leading-relaxed">  Resume 322 is commiteed to help new people in the industry to create a better environment for making Resume. </p>
                 <div>
                     <p className="pt-3 w-60 sm:w-72 md:w-96 leading-6"> Full Name
                         <TEInput
-                            type="email"
+                            type="full name"
                             size="lg"
                             className="mb-6">
                         </TEInput>
                     </p>
-                    <p className="pt-0 w-60 sm:w-72 md:w-96 leading-6"> Email Address
+                    <p className="pt-3 w-60 sm:w-72 md:w-96 leading-6"> Email
                         <TEInput
-                            type="password"
+                            type="email"
                             size="lg"
                             className="mb-6">
                         </TEInput>
