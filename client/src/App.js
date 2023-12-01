@@ -7,12 +7,13 @@ import Signup from './Signup'
 import {Routes, Route} from 'react-router-dom';
 import Navbar from './NavBar';
 import MainLayout from './MainLayout';
+import Starting from './Starting';
 
 function App() {
 
   return (
     <div className="App flex flex-col w-full h-full">
-      <HomePage/>
+      <MainLayout/>
     </div>
 
   );

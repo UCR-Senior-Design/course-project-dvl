@@ -18,7 +18,7 @@ const Login = () => {
 
 
   return (
-    <MainLayout>
+
         <div className="bg-gray-300 py-60 px-48">
                 <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold"> Welcome to Resume 322 </h1>
                 <p className="pt-4 w-72 sm:w-72 md:w-96 leading-relaxed">  Resume 322 is commiteed to help new people int he industry to create a better environment for making Resume. </p>
@@ -70,7 +70,7 @@ const Login = () => {
                 </div>
                 <button onClick={() => navigate("/Home")}>Home</button>
           </div>
-    </MainLayout>
+
   );
 };
 
