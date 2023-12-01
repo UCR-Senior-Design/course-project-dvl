@@ -1,8 +1,7 @@
 import React from 'react'
 import MainLayout from './MainLayout'
-
+import Navbar from './NavBar'
 const Templates = () => {
-
   return (
     <MainLayout> 
         <div className="bg-gray-300 py-20 px-12" align="center">

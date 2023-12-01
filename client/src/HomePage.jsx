@@ -3,11 +3,10 @@ import MainLayout from './MainLayout'
 import { Layout } from './layout/Layout'
 import { Preview } from './layout/Preview'
 import EditorContext from "./editorContext"
-
+import Navbar from './NavBar'
 
 const HomePage = () => {
   const  [markdownText, setMarkdownText] = useState("");
-
   const contextValue = {
     markdownText,
     setMarkdownText
@@ -25,6 +24,7 @@ const HomePage = () => {
           <Layout />
           <Preview />
         </div>
+        <Navbar/>
         </MainLayout>
     </div>
     </EditorContext.Provider>

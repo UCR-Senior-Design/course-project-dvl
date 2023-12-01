@@ -1,6 +1,7 @@
 import React from 'react'
 import { TEInput } from "tw-elements-react";
-
+import { useNavigate } from "react-router-dom";
+import MainLayout from './MainLayout';
 const Login = () => {
     const [checked, setChecked] = React.useState(false);
 
@@ -13,9 +14,11 @@ const Login = () => {
     const handleChange2 = () => {
         setChecked2(!checked2);
     }
+    const navigate = useNavigate();
+
 
   return (
-    <div>
+    <MainLayout>
         <div className="bg-gray-300 py-60 px-48">
                 <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold"> Welcome to Resume 322 </h1>
                 <p className="pt-4 w-72 sm:w-72 md:w-96 leading-relaxed">  Resume 322 is commiteed to help new people int he industry to create a better environment for making Resume. </p>
@@ -65,8 +68,9 @@ const Login = () => {
                 <p className="pt-3 w-60 sm:w-72 md:w-96 leading-10">Need help logging in? Contact us {'>'} </p>
                 <p>Already a member? Set them up now {'>'}</p>
                 </div>
+                <button onClick={() => navigate("/Home")}>Home</button>
           </div>
-    </div>
+    </MainLayout>
   );
 };
 

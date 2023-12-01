@@ -1,15 +1,19 @@
 import React from 'react'
 import { TEInput } from "tw-elements-react";
-
+import { useNavigate } from "react-router-dom";
+import MainLayout from './MainLayout'
 const Login = () => {
+    
     const [checked, setChecked] = React.useState(false);
 
     const handleChange = () => {
         setChecked(!checked);
     }
 
+    const navigate = useNavigate();
+
   return (
-    <div>
+    <MainLayout>
         <div className="bg-gray-300 py-60 px-48">
                 <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold"> Welcome Back! </h1>
                 <p className="pt-4 w-72 sm:w-72 md:w-96 leading-relaxed">  At DVL we are continually striving to improve accessibility of our products
@@ -45,8 +49,11 @@ const Login = () => {
                 <p className="pt-3 w-60 sm:w-72 md:w-96 leading-10">Need help logging in? Contact us {'>'} </p>
                 <p>New member? Sign up now {'>'}</p>
                 </div>
+                <button onClick={() => navigate("/Home")}>Home</button>
           </div>
-    </div>
+    </MainLayout>
+
+    
   );
 };
 
