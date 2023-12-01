@@ -10,11 +10,11 @@ const Starting = () => {
         <div className="Start">
             {
                 show?<section className= "bg-dark-hard">
-                <footer className="py-10 px-8 text-center bg-gray-800">
+                <header className="py-10 px-8 text-center items-center justify-center flex h-screen bg-gray-800">
                 <div className="container" align="center" class="center" onClick={()=>setShow(false)}>
                     <img src={images.DVLlogo} alt="brand Logo" onClick={() => navigate("/HomePage")}></img>
                 </div>
-                </footer>
+                </header>
                 </section>:null
             }
             

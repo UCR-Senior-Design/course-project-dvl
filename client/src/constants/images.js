@@ -1,7 +1,7 @@
 import DVLlogo from "../assets/DVLlogo.svg";
 
 const images = {
-    DVLlogo,
+    DVLlogo
 };
 
 export default images;
