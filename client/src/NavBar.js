@@ -4,6 +4,7 @@ import HomePage from "./HomePage";
 import Templates from './Templates';
 import Signup from './Signup';
 import Login from './Login';
+import ContactUs from "./ContactUs";
 
 
 function Navbar(){
@@ -14,6 +15,7 @@ function Navbar(){
                 <Route path="/Templates" element={<Templates/>}/>
                 <Route path="/Login" element={<Login/>}/>
                 <Route path="/Signup" element={<Signup/>}/>
+                <Route path="/ContactUs" element={<ContactUs/>}/>
             </Routes>
         </nav>
     );

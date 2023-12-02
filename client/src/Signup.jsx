@@ -5,7 +5,6 @@ import MainLayout from './MainLayout';
 import HomeNav from './HomeNav';
 import Footer from './Footer';
 
-
 const Login = () => {
     const [checked, setChecked] = React.useState(false);
 
@@ -71,8 +70,13 @@ const Login = () => {
                 </div>
                 
                 <div>
-                <p className="pt-3 w-60 sm:w-72 md:w-96 leading-10">Need help logging in? Contact us {'>'} </p>
-                <p>Already a member? Set them up now {'>'}</p>
+                Need help logging in? {" "}
+                <button className="text-blue-600 underline" onClick={() => navigate("/ContactUs")}>Contact us </button>
+                </div>
+
+                <div>
+                Already a member? {" "}
+                <button className="text-blue-600 underline" onClick={() => navigate("/Login")}>Login here </button>
                 </div>
                 </div>
                 <div>
