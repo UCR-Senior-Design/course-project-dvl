@@ -23,14 +23,15 @@ To help new students create a better environment for making Resume
 
 ## Description
 
-An in-depth paragraph about your project and overview of use.
+Resume 322 is a resume builder, a web application that uses Markdown and CSS to create a resume. Users can export their finished resumes in multiple formats including PDF or HTML. Resume 322 is important because of how much of a struggle it is to format a resume through a normal word processor. The ability to be familiar with Markdown is better as it gives users more control.
 
 ## Getting Started
 
 ### Dependencies
 
-* Describe any prerequisites, libraries, OS version, etc., needed before installing program.
+* Describe any prerequisites, libraries, OS version, etc., needed before installing the program.
 * ex. Windows 10
+* ex. Install Node.js
 
 ### Installing
 
@@ -67,7 +68,7 @@ npm start
 ```
 ## Help
 
-Any advise for common problems or issues.
+Any advice for common problems or issues.
 ```
 command to run if program contains helper info
 ```
@@ -85,7 +86,7 @@ Lester Lien
 
 ## License
 
-This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
+This project is licensed under the DVL License - see the LICENSE.md file for details
 
 ## Acknowledgments
 
