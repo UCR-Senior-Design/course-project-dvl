@@ -28,27 +28,18 @@ const Login = () => {
                 <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold"> Welcome to Resume 322 </h1>
                 <p className="pt-4 w-72 sm:w-72 md:w-96 leading-relaxed">  Resume 322 is commiteed to help new people in the industry to create a better environment for making Resume. </p>
                 <div>
-                    <p className="pt-3 w-60 sm:w-72 md:w-96 leading-6"> Full Name
-                        <TEInput
-                            type="full name"
-                            size="lg"
-                            className="mb-6">
-                        </TEInput>
-                    </p>
-                    <p className="pt-3 w-60 sm:w-72 md:w-96 leading-6"> Email
-                        <TEInput
-                            type="email"
-                            size="lg"
-                            className="mb-6">
-                        </TEInput>
-                    </p>
-                    <p className="pt-0 w-60 sm:w-72 md:w-96 leading-6"> Password
-                        <TEInput
-                            type="password"
-                            size="lg"
-                            className="mb-6">
-                        </TEInput>
-                    </p>
+                <div>
+                            <label for="email" class="block mt-4 mb-2 text-lg font-medium text-gray-900 dark:text-gray-600">Full Name</label>
+                            <input type="email" id="email" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="" required/>
+                        </div>
+                    <div>
+                            <label for="email" class="block mt-4 mb-2 text-lg font-medium text-gray-900 dark:text-gray-600">Your email</label>
+                            <input type="email" id="email" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="name@gmail.com" required/>
+                        </div>
+                        <div>
+                            <label for="email" class="block mt-4 mb-2 text-lg font-medium text-gray-900 dark:text-gray-600">Password</label>
+                            <input type="email" id="email" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="" required/>
+                        </div>
                 </div>
 
                 <div className="mt-3">
@@ -60,7 +51,7 @@ const Login = () => {
                         />
                 </div>
 
-                <div className="mt-3">
+                <div className="mt-3 mb-3">
                     <Checkbox2
                         // style={{transform: "scale(5)",}}
                         label2 = " Remember my email and password"
