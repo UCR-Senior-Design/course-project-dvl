@@ -31,6 +31,7 @@ const Note = ({ noteId }) => {
 
                 <td className="table__cell">
                     <button
+                        className="icon-button table__button"
                         onClick={handleEdit}
                     >
                     </button>
