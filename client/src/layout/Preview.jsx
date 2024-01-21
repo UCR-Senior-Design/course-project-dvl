@@ -1,8 +1,8 @@
-import React, { useContext } from 'react'
-import styled from "styled-components"
-import ReactMarkdown from "react-markdown";
+import React, { useContext } from 'react';
+import styled from 'styled-components';
+import ReactMarkdown from 'react-markdown';
 import editorContext from '../editorContext';
-import Markdown from 'react-markdown';
+import cssContext from '../cssContext';
 
 const Container = styled.div`
   width: 50%;
@@ -17,19 +17,9 @@ const PreviewArea = styled.div`
   border: none;
   outline: none;
   font-size: 17px;
-`;
-const StyledMarkdown = styled.div`
-  /* Add your global CSS styles here */
-  p {
-    /* Example: Customize the style for paragraphs */
-    color: #333;
-    font-size: 16px;
-  }
 
-  /* Add more styles as needed */
-
-  /* Apply CSS from user input */
-  ${({ cssText }) => cssText}
+  /* Apply user-input CSS to the rendered Markdown content */
+  ${props => props.cssText}
 `;
 
 export function Preview(props) {
@@ -41,10 +31,8 @@ export function Preview(props) {
   return (
     <Container>
       <h1 className="font-bold text-xl text-center border-b-4 border-gray-500/40">Preview</h1>
-      <PreviewArea>
-        <StyledMarkdown cssText={cssText}>
-          <ReactMarkdown children={markdownText} className="markdown" />
-        </StyledMarkdown>
+      <PreviewArea cssText={cssText}>
+        <ReactMarkdown className="markdown" children={markdownText} />
       </PreviewArea>
     </Container>
   );

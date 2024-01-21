@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react'
 import styled from "styled-components"
 import editorContext from "../editorContext";
+import cssContext from "../cssContext";
 
 const Container = styled.div`
   width: 50%;
