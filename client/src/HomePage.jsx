@@ -7,6 +7,7 @@ import Navbar from './NavBar'
 import Header from './Header'
 import Footer from './Footer'
 
+
 const HomePage = () => {
   const  [markdownText, setMarkdownText] = useState("");
   const contextValue = {
