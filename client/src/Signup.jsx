@@ -41,6 +41,17 @@ const Login = () => {
                             <label for="email" class="block mt-4 mb-2 text-lg font-medium text-gray-900 dark:text-gray-600">Password</label>
                             <input type="email" id="email" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="" required/>
                         </div>
+                        <button className= "mt-5 border-2 border-blue-500 px-6 py-2 rounded-full text-blue-500 font-semibold hover:bg-blue-500 hover:text-white">Let's Start</button>
+                        <GoogleOAuthProvider clientId="<852007549024-0a6ccodb1tga0gqblp860cieu3dqlndl.apps.googleusercontent.com>">    
+                        <GoogleLogin 
+                            onSuccess={credentialResponse => {
+                                console.log(credentialResponse);
+                            }}
+                                onError={() => {
+                                console.log('Login Failed');
+                            }}
+                        />
+                        </GoogleOAuthProvider> 
                 </div>
 
                 <div className="mt-3">
@@ -70,16 +81,6 @@ const Login = () => {
                 Already a member? {" "}
                 <button className="text-blue-600 underline" onClick={() => navigate("/Login")}>Login here </button>
                 </div>
-                <GoogleOAuthProvider clientId="<852007549024-0a6ccodb1tga0gqblp860cieu3dqlndl.apps.googleusercontent.com>">    
-                <GoogleLogin
-                    onSuccess={credentialResponse => {
-                        console.log(credentialResponse);
-                    }}
-                    onError={() => {
-                        console.log('Login Failed');
-                    }}
-                />
-                </GoogleOAuthProvider>
                 </div>
                 <div>
             <Footer/>
