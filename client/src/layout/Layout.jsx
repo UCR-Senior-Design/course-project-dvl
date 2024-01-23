@@ -50,7 +50,7 @@ export function Layout(props) {
       <div className="flex justify-center mb-4">
         <button
           className={`mx-2 px-4 py-2 ${
-            activeTab === 'markdown' ? 'bg-blue-500 text-white' : 'bg-gray-300'
+            activeTab === 'markdown' ? "border-2 border-blue-500 px-6 py-2 rounded-full text-blue-500 font-semibold hover:bg-blue-500 hover:text-white" : 'g-gray-300"border-2 border-gray-500 px-6 py-2 rounded-full text-white-500 font-semibold hover:bg-gray-500 hover:text-white"'
           }`}
           onClick={switchToMarkdown}
         >
@@ -58,7 +58,7 @@ export function Layout(props) {
         </button>
         <button
           className={`mx-2 px-4 py-2 ${
-            activeTab === 'css' ? 'bg-blue-500 text-white' : 'bg-gray-300'
+            activeTab === 'css' ? "border-2 border-blue-500 px-6 py-2 rounded-full text-blue-500 font-semibold hover:bg-blue-500 hover:text-white" : 'g-gray-300"border-2 border-gray-500 px-6 py-2 rounded-full text-white-500 font-semibold hover:bg-gray-500 hover:text-white"'
           }`}
           onClick={switchToCSS}
         >
