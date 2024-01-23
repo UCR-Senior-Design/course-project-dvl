@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import MainLayout from './MainLayout';
 import HomeNav from './HomeNav';
 import Footer from './Footer';
+import { GoogleOAuthProvider, GoogleLogin } from '@react-oauth/google';
 
 const Login = () => {
     const [checked, setChecked] = React.useState(false);
@@ -69,12 +70,22 @@ const Login = () => {
                 Already a member? {" "}
                 <button className="text-blue-600 underline" onClick={() => navigate("/Login")}>Login here </button>
                 </div>
+                <GoogleOAuthProvider clientId="<852007549024-0a6ccodb1tga0gqblp860cieu3dqlndl.apps.googleusercontent.com>">    
+                <GoogleLogin
+                    onSuccess={credentialResponse => {
+                        console.log(credentialResponse);
+                    }}
+                    onError={() => {
+                        console.log('Login Failed');
+                    }}
+                />
+                </GoogleOAuthProvider>
                 </div>
                 <div>
             <Footer/>
           </div>
           </div>
-
+    
   );
 };
 
