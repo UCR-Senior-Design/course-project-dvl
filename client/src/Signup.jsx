@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import MainLayout from './MainLayout';
 import HomeNav from './HomeNav';
 import Footer from './Footer';
-import { GoogleOAuthProvider, GoogleLogin } from '@react-oauth/google';
+import { GoogleLogin } from '@react-oauth/google';
 
 import { signup } from './actions/auth.js';
 import { AUTH } from './constants/actionTypes';
@@ -62,19 +62,19 @@ const Login = () => {
                 <p className="pt-4 w-72 sm:w-72 md:w-96 leading-relaxed">  Resume 322 is commiteed to help new people in the industry to create a better environment for making Resume. </p>
                 <form onSubmit={handleSubmit}>
                     <div>
-                            <label for="email" class="block mt-4 mb-2 text-lg font-medium text-gray-900 dark:text-gray-600">Full Name</label>
-                            <input type="email" id="email" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="" required/>
+                            <label for="name" class="block mt-4 mb-2 text-lg font-medium text-gray-900 dark:text-gray-600">Full Name</label>
+                            <input name="name" id="Name" handleChange={handleChange3} class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="" required/>
                         </div>
                     <div>
                             <label for="email" class="block mt-4 mb-2 text-lg font-medium text-gray-900 dark:text-gray-600">Your email</label>
-                            <input type="email" id="email" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="name@gmail.com" required/>
+                            <input type="email" id="Email" handleChange={handleChange3} class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="name@gmail.com" required/>
                         </div>
                         <div>
-                            <label for="email" class="block mt-4 mb-2 text-lg font-medium text-gray-900 dark:text-gray-600">Password</label>
-                            <input type="email" id="email" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="" required/>
+                            <label for="password" class="block mt-4 mb-2 text-lg font-medium text-gray-900 dark:text-gray-600">Password</label>
+                            <input type="password" id="Password" handleChange={handleChange3} class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="" required/>
                         </div>
-                        <button className= "mt-5 border-2 border-blue-500 px-6 py-2 rounded-full text-blue-500 font-semibold hover:bg-blue-500 hover:text-white">Let's Start</button>
-                        <GoogleOAuthProvider clientId="852007549024-0a6ccodb1tga0gqblp860cieu3dqlndl.apps.googleusercontent.com">    
+                        <button type="submit" className= "mt-5 border-2 border-blue-500 px-6 py-2 rounded-full text-blue-500 font-semibold hover:bg-blue-500 hover:text-white">Let's Start</button>
+                            
                         <GoogleLogin 
                             onSuccess={credentialResponse => {
                                 console.log(credentialResponse);
@@ -82,8 +82,7 @@ const Login = () => {
                                 onError={() => {
                                 console.log('Login Failed');
                             }}
-                        />
-                        </GoogleOAuthProvider> 
+                        /> 
                 </form>
 
                 <div className="mt-3">
