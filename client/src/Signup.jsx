@@ -1,12 +1,21 @@
 import React, { useState } from 'react'
+import { useDispatch } from 'react-redux';
 import { TEInput } from "tw-elements-react";
-import { useNavigate, useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import MainLayout from './MainLayout';
 import HomeNav from './HomeNav';
 import Footer from './Footer';
 import { GoogleOAuthProvider, GoogleLogin } from '@react-oauth/google';
 
+import { signup } from './actions/auth.js';
+import { AUTH } from './constants/actionTypes';
+
+const initialState = { Name: '', email: '', password: '', confirmPassword: '' };
+
 const Login = () => {
+    const [form, setForm] = useState(initialState);
+    const dispatch = useDispatch();
+
     const [checked, setChecked] = React.useState(false);
 
     const handleChange = () => {
@@ -22,25 +31,27 @@ const Login = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        dispatch(signin(form, history));
-        }
+        dispatch(signup(form, navigate));
       };
 
     
     const googleSuccess = async (res) => {
-    const result = res?.profileObj;
-    const token = res?.tokenId;
+        const result = res?.profileObj;
+        const token = res?.tokenId;
 
-    try {
-      dispatch({ type: AUTH, data: { result, token } });
+     try {
+        dispatch({ type: AUTH, data: { result, token } });
 
-      history.push('/');
-    } catch (error) {
-      console.log(error);
+        navigate.push('/');
+     } catch (error) {
+        console.log(error);
     }
     };
 
     const googleError = () => alert('Google Sign In was unsuccessful. Try again later');
+
+    const handleChange3 = (e) => setForm({ ...form, [e.target.name]: e.target.value });
+
   return (
         <div className="bg-gray-300">
             <div>
@@ -49,8 +60,8 @@ const Login = () => {
             <div className="py-60 px-48">
                 <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold"> Welcome to Resume 322 </h1>
                 <p className="pt-4 w-72 sm:w-72 md:w-96 leading-relaxed">  Resume 322 is commiteed to help new people in the industry to create a better environment for making Resume. </p>
-                <div>
-                <div>
+                <form onSubmit={handleSubmit}>
+                    <div>
                             <label for="email" class="block mt-4 mb-2 text-lg font-medium text-gray-900 dark:text-gray-600">Full Name</label>
                             <input type="email" id="email" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="" required/>
                         </div>
@@ -73,7 +84,7 @@ const Login = () => {
                             }}
                         />
                         </GoogleOAuthProvider> 
-                </div>
+                </form>
 
                 <div className="mt-3">
                     <Checkbox
