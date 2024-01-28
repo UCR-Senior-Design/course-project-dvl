@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { TEInput } from "tw-elements-react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useHistory } from "react-router-dom";
 import MainLayout from './MainLayout';
 import HomeNav from './HomeNav';
 import Footer from './Footer';
@@ -20,6 +20,27 @@ const Login = () => {
     }
     const navigate = useNavigate();
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        dispatch(signin(form, history));
+        }
+      };
+
+    
+    const googleSuccess = async (res) => {
+    const result = res?.profileObj;
+    const token = res?.tokenId;
+
+    try {
+      dispatch({ type: AUTH, data: { result, token } });
+
+      history.push('/');
+    } catch (error) {
+      console.log(error);
+    }
+    };
+
+    const googleError = () => alert('Google Sign In was unsuccessful. Try again later');
   return (
         <div className="bg-gray-300">
             <div>
