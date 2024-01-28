@@ -1,11 +1,12 @@
 const bcrypt = require("bcryptjs")
 const jwt = require("jsonwebtoken")
+const asyncHandler = require('express-async-handler')
 
 const UserModal = require("../models/user.js")
 
 const secret = 'test';
 
-const signin = async (req, res) => {
+const signin = asyncHandler(async (req, res) => {
   const { email, password } = req.body;
 
   try {
@@ -23,9 +24,9 @@ const signin = async (req, res) => {
   } catch (err) {
     res.status(500).json({ message: "Something went wrong" });
   }
-};
+});
 
-const signup = async (req, res) => {
+const signup = asyncHandler(async (req, res) => {
   const { email, password, name } = req.body;
 
   try {
@@ -45,7 +46,7 @@ const signup = async (req, res) => {
     
     console.log(error);
   }
-};
+});
 
 module.exports = {
   signin,

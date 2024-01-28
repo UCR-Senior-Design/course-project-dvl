@@ -1,11 +1,12 @@
 const express = require('express')
 const mongoose = require('mongoose')
+const asyncHandler = require('express-async-handler')
 
 const Resume = require('../models/resume.js')
 
 const router = express.Router();
 
-const getResumes = async (req, res) => { 
+const getResumes = asyncHandler(async (req, res) => { 
     try {
         const resumes = await Resume.find();
                 
@@ -13,9 +14,9 @@ const getResumes = async (req, res) => {
     } catch (error) {
         res.status(404).json({ message: error.message });
     }
-}
+})
 
-const getResume = async (req, res) => { 
+const getResume = asyncHandler(async (req, res) => { 
     const { id } = req.params;
 
     try {
@@ -25,9 +26,9 @@ const getResume = async (req, res) => {
     } catch (error) {
         res.status(404).json({ message: error.message });
     }
-}
+})
 
-const createResume = async (req, res) => {
+const createResume = asyncHandler(async (req, res) => {
     const resume = req.body;
 
     const newResume = new Resume({ ...resume, creator: req.userId, createdAt: new Date().toISOString() })
@@ -39,9 +40,9 @@ const createResume = async (req, res) => {
     } catch (error) {
         res.status(409).json({ message: error.message });
     }
-}
+})
 
-const updateResume = async (req, res) => {
+const updateResume = asyncHandler(async (req, res) => {
     const { id } = req.params;
     const { title, message, creator, selectedFile, tags } = req.body;
     
@@ -52,9 +53,9 @@ const updateResume = async (req, res) => {
     await Resume.findByIdAndUpdate(id, updatedResume, { new: true });
 
     res.json(updatedResume);
-}
+})
 
-const deleteResume = async (req, res) => {
+const deleteResume = asyncHandler(async (req, res) => {
     const { id } = req.params;
 
     if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No resume with id: ${id}`);
@@ -62,7 +63,7 @@ const deleteResume = async (req, res) => {
     await Resume.findByIdAndRemove(id);
 
     res.json({ message: "Resume deleted successfully." });
-}
+})
 
 module.exports = {
     getResumes,
@@ -70,4 +71,4 @@ module.exports = {
     createResume,
     updateResume,
     deleteResume
-}
+};
