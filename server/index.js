@@ -4,7 +4,7 @@ const mongoose = require('mongoose')
 const cors = require('cors')
 const bodyParser = require('body-parser')
 
-const PORT = process.env.PORT || 3500
+const PORT = process.env.PORT || 3500 
 const CONNECTION_URL = process.env.DATABASE_URI
 
 const resumeRoutes =  require('./routes/resumes.js')

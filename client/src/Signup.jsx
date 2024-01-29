@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
-import { TEInput } from "tw-elements-react";
+// import { TEInput } from "tw-elements-react";
 import { useNavigate } from "react-router-dom";
-import MainLayout from './MainLayout';
+// import MainLayout from './MainLayout';
 import HomeNav from './HomeNav';
 import Footer from './Footer';
 import { GoogleLogin } from '@react-oauth/google';
@@ -78,9 +78,11 @@ const Login = () => {
                         <GoogleLogin 
                             onSuccess={credentialResponse => {
                                 console.log(credentialResponse);
+                                googleSuccess;
                             }}
                                 onError={() => {
                                 console.log('Login Failed');
+                                googleError;
                             }}
                         /> 
                 </form>
