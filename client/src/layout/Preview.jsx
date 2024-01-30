@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import styled from 'styled-components';
 import ReactMarkdown from 'react-markdown';
 import editorContext from '../editorContext';
-import cssContext from '../cssContext';
+import addingCSS from './Preview.css';
 
 const Container = styled.div`
   width: 50%;
@@ -25,15 +25,12 @@ const PreviewArea = styled.div`
 export function Preview(props) {
   const { markdownText, cssText } = useContext(editorContext);
 
-  console.log('Markdown Text: ', markdownText);
-  console.log('CSS Text: ', cssText);
+  console.log('Converted Text: ', markdownText);
 
-  return (
-    <Container>
-      <h1 className="font-bold text-xl text-center border-b-4 border-gray-500/40">Preview</h1>
-      <PreviewArea cssText={cssText}>
-        <ReactMarkdown className="markdown" children={markdownText} />
-      </PreviewArea>
-    </Container>
-  );
-}
+  return <Container>
+  <h1 className="font-bold text-xl text-center border-b-4 border-gray-500/40">Preview</h1>
+  <PreviewArea>
+      <ReactMarkdown children={markdownText} className="markdown" />
+  </PreviewArea>
+  </Container>
+  };
