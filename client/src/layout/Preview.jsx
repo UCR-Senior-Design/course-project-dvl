@@ -1,8 +1,8 @@
-import React, { useContext } from 'react';
+import React, { useContext, useRef } from 'react';
 import styled from 'styled-components';
 import ReactMarkdown from 'react-markdown';
 import editorContext from '../editorContext';
-import cssContext from '../cssContext';
+import { jsPDF } from "jspdf";
 
 const Container = styled.div`
   width: 50%;
@@ -22,18 +22,32 @@ const PreviewArea = styled.div`
   ${props => props.cssText}
 `;
 
-export function Preview(props) {
+export function Preview() {
   const { markdownText, cssText } = useContext(editorContext);
+  const pdfRef = useRef(null);
 
-  console.log('Markdown Text: ', markdownText);
-  console.log('CSS Text: ', cssText);
+  const handleGeneratePDF = () => {
+    const jspdf = new jsPDF('p', 'pt', 'letter');
 
+    const data = {
+      callback: function (jspdf) {
+        jspdf.save('resume.pdf');
+      },
+      margin: [10, 10, 10, 10],
+      autoPaging: 'text',
+    };
+
+    jspdf.html(pdfRef.current.innerHTML, data);
+  };
+  
   return (
     <Container>
+      <button className= " border-2 border-blue-500 px-6 py-2 ml-40 mb-4 rounded-full text-blue-500 font-semibold hover:bg-blue-500 hover:text-white"onClick={handleGeneratePDF}>Generate PDF</button>
       <h1 className="font-bold text-xl text-center border-b-4 border-gray-500/40">Preview</h1>
-      <PreviewArea cssText={cssText}>
-        <ReactMarkdown className="markdown" children={markdownText} />
-      </PreviewArea>
+              <PreviewArea ref={pdfRef} >
+              <ReactMarkdown className="markdown" children={markdownText} />
+              </PreviewArea>
+
     </Container>
   );
 }
