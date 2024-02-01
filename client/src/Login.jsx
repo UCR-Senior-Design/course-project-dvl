@@ -25,7 +25,7 @@ const Login = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        dispatch(signin(form, navigate('/HomePage')));
+        dispatch(signin(form, navigate("/HomePage")));
       };
 
     const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
