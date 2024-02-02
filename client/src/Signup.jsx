@@ -10,7 +10,7 @@ import { GoogleLogin } from '@react-oauth/google';
 import { signup } from './actions/auth.js';
 import { AUTH } from './constants/actionTypes';
 
-const initialState = { name: '', email: '', password: ''};
+const initialState = { name: '', email: '', password: '' };
 
 const Signup = () => {
     const [form, setForm] = useState(initialState);
@@ -32,30 +32,28 @@ const Signup = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         dispatch(signup(form, navigate('/HomePage')));
-      };
+    };
 
-    
+
     const googleSuccess = async (res) => {
         const result = res?.profileObj;
         const token = res?.tokenId;
 
-     try {
-        dispatch({ type: AUTH, data: { result, token } });
+        try {
+            dispatch({ type: AUTH, data: { result, token } });
 
-        navigate('/HomePage');
-     } catch (error) {
-        console.log(error);
-    }
+            navigate('/HomePage');
+        } catch (error) {
+            console.log(error);
+        }
     };
-
-    const googleError = () => alert('Google Sign In was unsuccessful. Try again later');
 
     const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
-  return (
+    return (
         <div className="bg-gray-300">
             <div>
-                <HomeNav/>
+                <HomeNav />
             </div>
             <div className="py-60 px-48">
                 <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold"> Welcome to Resume 322 </h1>
@@ -63,25 +61,24 @@ const Signup = () => {
                 <form onSubmit={handleSubmit}>
                     <div>
                         <label for="name" class="block mt-4 mb-2 text-lg font-medium text-gray-900 dark:text-gray-600">Full Name</label>
-                        <input name="name" id="name" onChange={handleChange} class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="" required/>
+                        <input name="name" id="name" onChange={handleChange} class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="" required />
                     </div>
                     <div>
                         <label for="email" class="block mt-4 mb-2 text-lg font-medium text-gray-900 dark:text-gray-600">Your email</label>
-                        <input name="email" type="email" id="email" onChange={handleChange} class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="name@gmail.com" required/>
+                        <input name="email" type="email" id="email" onChange={handleChange} class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="name@gmail.com" required />
                     </div>
                     <div>
                         <label for="password" class="block mt-4 mb-2 text-lg font-medium text-gray-900 dark:text-gray-600">Password</label>
-                        <input name="password" type="password" id="password" onChange={handleChange} class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="" required/>
+                        <input name="password" type="password" id="password" onChange={handleChange} class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="" required />
                     </div>
-                        <button type="submit" className= "mt-5 border-2 border-blue-500 px-6 py-2 rounded-full text-blue-500 font-semibold hover:bg-blue-500 hover:text-white">Let's Start</button>
-                            
-                        {/* <GoogleLogin
-                            onSuccess={googleSuccess}
-                            onError={googleError}
-                            cookiePolicy="single_host_origin"
-                        />  */}
-                </form>
+                    <button type="submit" className="mt-5 border-2 border-blue-500 px-6 py-2 rounded-full text-blue-500 font-semibold hover:bg-blue-500 hover:text-white">Let's Start</button>
 
+
+                </form>
+                <GoogleLogin
+                        onSuccess={(response) => console.log(response)}
+                        onError={() => console.log('Login Failed')}
+                    />
                 {/* <div className="mt-3">
                     <Checkbox
                         // style={{transform: "scale(5)",}}
@@ -99,40 +96,40 @@ const Signup = () => {
                         onChange2={handleChange2}
                         />
                 </div> */}
-                
+
                 <div>
-                Need help logging in? {" "}
-                <button className="text-blue-600 underline" onClick={() => navigate("/ContactUs")}>Contact us </button>
+                    Need help logging in? {" "}
+                    <button className="text-blue-600 underline" onClick={() => navigate("/ContactUs")}>Contact us </button>
                 </div>
 
                 <div>
-                Already a member? {" "}
-                <button className="text-blue-600 underline" onClick={() => navigate("/Login")}>Login here </button>
+                    Already a member? {" "}
+                    <button className="text-blue-600 underline" onClick={() => navigate("/Login")}>Login here </button>
                 </div>
-                </div>
-                <div>
-            <Footer/>
-          </div>
-          </div>
-    
-  );
+            </div>
+            <div>
+                <Footer />
+            </div>
+        </div>
+
+    );
 };
 
-const Checkbox = ({label, value, onChange}) => {
-    return(
-        <label>
-            <input type = "checkbox" checked ={value} onChange={onChange} />
-            {label}
-        </label>
-    )
-}
+// const Checkbox = ({ label, value, onChange }) => {
+//     return (
+//         <label>
+//             <input type="checkbox" checked={value} onChange={onChange} />
+//             {label}
+//         </label>
+//     )
+// }
 
-const Checkbox2 = ({label2, value2, onChange2}) => {
-    return(
-        <label>
-            <input type = "checkbox" checked2 ={value2} onChange2={onChange2} />
-            {label2}
-        </label>
-    )
-}
+// const Checkbox2 = ({ label2, value2, onChange2 }) => {
+//     return (
+//         <label>
+//             <input type="checkbox" checked2={value2} onChange2={onChange2} />
+//             {label2}
+//         </label>
+//     )
+// }
 export default Signup;
