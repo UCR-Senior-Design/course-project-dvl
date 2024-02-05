@@ -21,7 +21,7 @@ const Header = () => {
     googleLogout();
     dispatch({ type: actionType.LOGOUT });
 
-    navigate('/auth');
+    navigate('/HomePage');
 
     setUser(null);
   };
