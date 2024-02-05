@@ -9,7 +9,7 @@ import * as actionType from './constants/actionTypes';
 // import Login from './Login';
 // import Signup from './Signup';
 import { jwtDecode } from "jwt-decode";
-
+import { googleLogout  } from '@react-oauth/google';
 
 const Header = () => {
   const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')));
@@ -18,6 +18,7 @@ const Header = () => {
   const navigate = useNavigate();
 
   const logout = () => {
+    googleLogout();
     dispatch({ type: actionType.LOGOUT });
 
     navigate('/auth');

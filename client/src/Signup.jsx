@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import HomeNav from './HomeNav';
 import Footer from './Footer';
 import { GoogleLogin } from '@react-oauth/google';
+import { jwtDecode } from "jwt-decode";
 
 import { signup } from './actions/auth.js';
 import { AUTH } from './constants/actionTypes';
@@ -36,8 +37,8 @@ const Signup = () => {
 
 
     const googleSuccess = async (res) => {
-        const result = res?.profileObj;
-        const token = res?.tokenId;
+        const result = jwtDecode(res?.credential);
+        const token = res?.credential;
 
         try {
             dispatch({ type: AUTH, data: { result, token } });
@@ -76,7 +77,7 @@ const Signup = () => {
 
                 </form>
                 <GoogleLogin
-                        onSuccess={(response) => console.log(response)}
+                        onSuccess={(response) => googleSuccess(response)}
                         onError={() => console.log('Login Failed')}
                     />
                 {/* <div className="mt-3">
