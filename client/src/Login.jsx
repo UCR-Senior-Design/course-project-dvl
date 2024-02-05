@@ -5,10 +5,10 @@ import { useNavigate } from "react-router-dom";
 // import MainLayout from './MainLayout'
 import HomeNav from './HomeNav';
 import Footer from './Footer';
-import { GoogleLogin } from '@react-oauth/google';
+// import { GoogleLogin } from '@react-oauth/google';
 
 import { signin } from './actions/auth.js';
-import { AUTH } from './constants/actionTypes';
+// import { AUTH } from './constants/actionTypes';
 
 const initialState = { name: '', email: '', password: ''};
 
