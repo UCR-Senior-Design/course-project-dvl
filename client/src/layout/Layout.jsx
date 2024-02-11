@@ -68,7 +68,7 @@ export function Layout(props) {
 
       {activeTab === 'markdown' && (
         <>
-          <h1 className="font-bold text-xl text-center border-b-4 border-gray-500/40">
+          <h1 className="font-bold text-xl text-center border-b-4  border-gray-500/40">
             Markdown Text
           </h1>
           <TextArea value={markdownText} onChange={onInputChange} />
