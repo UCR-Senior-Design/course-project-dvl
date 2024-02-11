@@ -16,14 +16,10 @@ const PreviewArea = styled.div`
   resize: none;
   border: none;
   outline: none;
-  font-size: 17px;
-
-  /* Apply user-input CSS to the rendered Markdown content */
-  ${props => props.cssText}
 `;
 
 export function Preview() {
-  const { markdownText, cssText } = useContext(editorContext);
+  const { markdownText } = useContext(editorContext);
   const pdfRef = useRef(null);
 
   const handleGeneratePDF = () => {
@@ -46,7 +42,7 @@ export function Preview() {
       <button className= "flex justify-center border-2 border-blue-500 px-6 py-2 ml-40 mb-4 rounded-full text-blue-500 font-semibold hover:bg-blue-500 hover:text-white"onClick={handleGeneratePDF}>Generate PDF</button>
       </div>
       <h1 className="font-bold text-xl text-center border-b-4 border-gray-500/40">Preview</h1>
-      <PreviewArea ref={pdfRef}>
+      <PreviewArea className='preview' ref={pdfRef}>
         <ReactMarkdown children={markdownText} className="markdown" />
       </PreviewArea>
     </Container>
