@@ -1,14 +1,15 @@
 import './App.css';
 import React from 'react'
-import HomePage from './HomePage';
-import Login from './Login';
-import Templates from './Templates'
-import Signup from './Signup'
-import {Routes, Route} from 'react-router-dom';
-import Navbar from './NavBar';
 import MainLayout from './MainLayout';
-import Starting from './Starting';
+// import HomePage from './HomePage';
+// import Login from './Login';
+// import Templates from './Templates'
+// import Signup from './Signup'
+// import {Routes, Route} from 'react-router-dom';
+// import Navbar from './NavBar';
+// import Starting from './Starting';
 import { GoogleOAuthProvider} from '@react-oauth/google';
+
 
 function App() {
 
