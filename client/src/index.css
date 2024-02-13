@@ -5,3 +5,7 @@
 .markdown > * {
     all: revert;
 }
+
+.preview {
+    font-size: 17px;
+}

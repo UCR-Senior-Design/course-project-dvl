@@ -45,7 +45,7 @@ export const likeResume = (id) => async (dispatch) => {
 
 export const deleteResume = (id) => async (dispatch) => {
   try {
-    await await api.deleteResume(id);
+    await api.deleteResume(id);
 
     dispatch({ type: DELETE, payload: id });
   } catch (error) {

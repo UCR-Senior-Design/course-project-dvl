@@ -8,6 +8,27 @@ import Footer from './Footer';
 
 const ContactUs = () => {
     const navigate = useNavigate();
+    const [formData, setFormData] = useState({
+        email: '',
+        subject: '',
+        message: ''
+    });
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData(prevState => ({
+            ...prevState,
+            [name]: value
+        }));
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        // Here you can add your logic for form submission
+        console.log('Form Submitted:', formData);
+        // Redirect to home page after submission
+        navigate("/HomePage");
+    };
 
   return (
     <div className="bg-gray-300">
