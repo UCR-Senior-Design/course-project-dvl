@@ -31,18 +31,6 @@ export const updateResume = (id, resume) => async (dispatch) => {
   }
 };
 
-export const likeResume = (id) => async (dispatch) => {
-  const user = JSON.parse(localStorage.getItem('profile'));
-
-  try {
-    const { data } = await api.likeResume(id, user?.token);
-
-    dispatch({ type: LIKE, payload: data });
-  } catch (error) {
-    console.log(error);
-  }
-};
-
 export const deleteResume = (id) => async (dispatch) => {
   try {
     await api.deleteResume(id);
