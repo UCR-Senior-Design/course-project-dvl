@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import ReactMarkdown from 'react-markdown';
 import editorContext from '../editorContext';
 import { jsPDF } from "jspdf";
+import markdownIt from 'markdown-it';
 
 const Container = styled.div`
   width: 50%;
@@ -23,19 +24,24 @@ export function Preview() {
   const pdfRef = useRef(null);
 
   const handleGeneratePDF = () => {
-    const jspdf = new jsPDF('p', 'pt', 'letter');
+    console.log(markdownText);
+    const jspdf = new jsPDF();
 
-    const data = {
+    // Convert Markdown to HTML
+    const md = new markdownIt();
+    const htmlContent = md.render(markdownText);
+    console.log(htmlContent);
+    // Generate PDF from HTML
+    jspdf.html(htmlContent, {
       callback: function (jspdf) {
-        jspdf.save('resume.pdf');
+        jspdf.save('markdown.pdf');
       },
-      margin: [10, 10, 10, 10],
-      autoPaging: 'text',
-    };
-
-    jspdf.html(pdfRef.current.innerHTML, data);
+      x: 15,
+      y: 15,
+      width: 170, //target width in the PDF document
+      windowWidth: 650 //window width in CSS pixels
+    });
   };
-  
   return (
     <Container>
       <div>
