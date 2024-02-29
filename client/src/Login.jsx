@@ -64,7 +64,7 @@ const Login = () => {
                 
                 <div>
                 Need help logging in? {" "}
-                <button className="text-blue-600 underline" onClick={() => navigate("/ContactUs")}>Contact us </button>
+                <button className="mt-5 text-blue-600 underline" onClick={() => navigate("/ContactUs")}>Contact us </button>
                 </div>
                 
                 <div>
