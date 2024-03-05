@@ -39,13 +39,16 @@ export function Preview() {
       x: 15,
       y: 15,
       width: 170, //target width in the PDF document
-      windowWidth: 650 //window width in CSS pixels
+      windowWidth: 700 //window width in CSS pixels
     });
   };
   return (
-    <Container>
+    <Container className='overflow-y-scroll'>
+      <div>
+        <button className= "flex justify-center border-2 border-blue-500 px-6 py-2 ml-40 mb-4 rounded-full text-blue-500 font-semibold hover:bg-blue-500 hover:text-white"onClick={handleGeneratePDF}>Generate PDF</button>
+      </div>
       <h1 className="font-bold text-xl text-center border-b-4 border-gray-500/40">Preview</h1>
-      <PreviewArea className='preview overflow-y-scroll border-b-4' ref={pdfRef}>
+      <PreviewArea className='preview border-b-4' ref={pdfRef}>
         <ReactMarkdown children={markdownText} className="markdown" />
       </PreviewArea>
     

@@ -1,25 +1,15 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-// import { TEInput } from "tw-elements-react";
 import { useNavigate } from "react-router-dom";
-// import MainLayout from './MainLayout'
 import HomeNav from './HomeNav';
 import Footer from './Footer';
-// import { GoogleLogin } from '@react-oauth/google';
-
 import { signin } from './actions/auth.js';
-// import { AUTH } from './constants/actionTypes';
 
 const initialState = { name: '', email: '', password: ''};
 
 const Login = () => {
     const [form, setForm] = useState(initialState);
     const dispatch = useDispatch();
-    // const [checked, setChecked] = React.useState(false);
-
-    // const handleChange = () => {
-    //     setChecked(!checked);
-    // }
 
     const navigate = useNavigate();
 
@@ -52,15 +42,6 @@ const Login = () => {
                 </div>
                 <button type="submit" className="mt-5 border-2 border-blue-500 px-6 py-2 rounded-full text-blue-500 font-semibold hover:bg-blue-500 hover:text-white">Login</button>
                 </form>
-
-                {/* <div className="mt-3 mb-3">
-                    <Checkbox
-                        // style={{transform: "scale(5)",}}
-                        label = " Remember my email and password"
-                        value ={checked}
-                        onChange={handleChange}
-                        />
-                </div> */}
                 
                 <div>
                 Need help logging in? {" "}
@@ -75,7 +56,7 @@ const Login = () => {
                 <div>
             <Footer/>
           </div>
-          </div>
+    </div>
     
   );
 };
