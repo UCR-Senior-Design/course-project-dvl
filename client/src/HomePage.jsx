@@ -12,6 +12,7 @@ import { getResumes } from './actions/resumes';
 
 const HomePage = () => {
   const [currentId, setCurrentId] = useState(0);
+  const [newResume, setNewResume] = useState('')
   const dispatch = useDispatch();
   const  [markdownText, setMarkdownText] = useState("");
   const contextValue = {
@@ -33,7 +34,7 @@ const HomePage = () => {
         </div>
          
         <div className='w-full h-full flex pb-1'>
-          <Layout currentId={currentId} setCurrentId={setCurrentId} />
+          <Layout newResume={newResume} currentId={currentId} setCurrentId={setCurrentId} />
           <Preview />
         </div>
 

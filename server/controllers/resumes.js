@@ -42,9 +42,19 @@ const createResume = asyncHandler(async (req, res) => {
     }
 })
 
+const deleteResume = asyncHandler(async (req, res) => {
+    const { id } = req.params;
+
+    if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No resume with id: ${id}`);
+
+    await Resume.findByIdAndDelete(id);
+
+    res.json({ message: "Resume deleted successfully." });
+})
 
 module.exports = {
     getResumes,
     getUserResumes,
     createResume,
+    deleteResume,
 };

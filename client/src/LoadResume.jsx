@@ -4,13 +4,13 @@ import Footer from './Footer';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { getResumesByCreator } from './actions/resumes.js';
+import { deleteResume } from './actions/resumes';
 
-const LoadResume = () => {
+const LoadResume = (setResume) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const resumes = useSelector(state => state.resumes); // Ensure correct key
   const user = JSON.parse(localStorage.getItem('profile'));
-  const [currentResume, setCurrentResume] = useState(null);
   
   useEffect(() => {
     const creatorId = user?.result?._id; // Replace with the actual creator ID
@@ -20,8 +20,12 @@ const LoadResume = () => {
   }, [dispatch, user?.result?._id]); // Ensure dependency array is correct
 
   const handleResumeClick = async (resume) => {
-    setCurrentResume(resume); // Pass the clicked resume to the Layout component
+    setResume = resume; // Pass the clicked resume to the Layout component
     navigate('/HomePage'); // Navigate to the Layout component
+  };
+
+  const handleDeleteResumeClick = async (resumeID) => {
+    dispatch(deleteResume(resumeID));
   };
 
   return (
@@ -35,6 +39,7 @@ const LoadResume = () => {
               <p>{resume.createdAt}</p>
             </div>
             <button onClick={() => handleResumeClick(resume.resume)} className="ml-2 border-2 border-blue-500 px-6 py-2 rounded-full text-blue-500 font-semibold hover:bg-blue-500 hover:text-white">Load Resume</button>
+            <button onClick={() => handleDeleteResumeClick(resume._id)} className="ml-2 border-2 border-blue-500 px-6 py-2 rounded-full text-blue-500 font-semibold hover:bg-blue-500 hover:text-white">Delete Resume</button>
           </div>
         ))}
       </div>
