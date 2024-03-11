@@ -27,17 +27,17 @@ export function Layout({ currentId, setCurrentId, props }) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { setMarkdownText } = useContext(editorContext);
+  var _ = require('lodash');
 
   useEffect(() => {
     const id = localStorage.getItem("current resume");
     if(id) {
       const eid = id.slice(1,-1);
       const newResume = JSON.parse(localStorage.getItem(`${eid}`));
-      console.log(newResume);
       if (newResume) {
         setResumeData(newResume);
-        localStorage.removeItem("current resume")
-        console.log(resumeData);
+        localStorage.removeItem("current resume");
+        localStorage.removeItem(`${eid}`);
       }
     }
   }, []);
@@ -54,12 +54,11 @@ export function Layout({ currentId, setCurrentId, props }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    resumeData._id = "";
-    resumeData.createdAt = "";
-    resumeData.creator = "";
+    console.log(resumeData);
+    const saveResume = _.omit(resumeData, ['createdAt', 'creator', '__v', '_id']);
     if (currentId === 0) {
-      console.log(resumeData);
-      dispatch(createResume(resumeData));
+      console.log(saveResume);
+      dispatch(createResume(saveResume));
       clear();
     } else {
       clear();
