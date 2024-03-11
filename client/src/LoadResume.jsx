@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { getResumesByCreator } from './actions/resumes.js';
 import { deleteResume } from './actions/resumes';
 
-const LoadResume = (setResume) => {
+const LoadResume = (setNewResume) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const resumes = useSelector(state => state.resumes); // Ensure correct key
@@ -20,8 +20,9 @@ const LoadResume = (setResume) => {
   }, [dispatch, user?.result?._id]); // Ensure dependency array is correct
 
   const handleResumeClick = async (resume) => {
-    setResume = resume; // Pass the clicked resume to the Layout component
-    navigate('/HomePage'); // Navigate to the Layout component
+    localStorage.setItem(resume._id, JSON.stringify(resume));
+    localStorage.setItem("current resume", JSON.stringify(resume._id));
+    navigate('/HomePage'); // Navigate to the homepage
   };
 
   const handleDeleteResumeClick = async (resumeID) => {
@@ -30,7 +31,7 @@ const LoadResume = (setResume) => {
 
   return (
     <div className='flex flex-col min-h-screen'>
-      <Header />
+      <Header/>
       <div className="flex-grow p-10">
         {resumes && resumes.map(resume => (
           <div key={resume._id} className='flex flex-row py-2'>
@@ -38,7 +39,7 @@ const LoadResume = (setResume) => {
               <p>{resume._id}</p>
               <p>{resume.createdAt}</p>
             </div>
-            <button onClick={() => handleResumeClick(resume.resume)} className="ml-2 border-2 border-blue-500 px-6 py-2 rounded-full text-blue-500 font-semibold hover:bg-blue-500 hover:text-white">Load Resume</button>
+            <button onClick={() => handleResumeClick(resume)} className="ml-2 border-2 border-blue-500 px-6 py-2 rounded-full text-blue-500 font-semibold hover:bg-blue-500 hover:text-white">Load Resume</button>
             <button onClick={() => handleDeleteResumeClick(resume._id)} className="ml-2 border-2 border-blue-500 px-6 py-2 rounded-full text-blue-500 font-semibold hover:bg-blue-500 hover:text-white">Delete Resume</button>
           </div>
         ))}

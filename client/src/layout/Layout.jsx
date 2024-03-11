@@ -22,16 +22,25 @@ const TextArea = styled.textarea`
   font-size: 17px;
 `;
 
-export function Layout({ newResume, currentId, setCurrentId, props }) {
+export function Layout({ currentId, setCurrentId, props }) {
   const [resumeData, setResumeData] = useState({ resume: defaultResume});
-  const resume = useSelector((state) => (currentId ? state.resumes.find((resume) => resume._id === currentId) : null));
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { setMarkdownText } = useContext(editorContext);
 
   useEffect(() => {
-    if (resume) setResumeData(newResume);
-  }, [resume]);
+    const id = localStorage.getItem("current resume");
+    if(id) {
+      const eid = id.slice(1,-1);
+      const newResume = JSON.parse(localStorage.getItem(`${eid}`));
+      console.log(newResume);
+      if (newResume) {
+        setResumeData(newResume);
+        localStorage.removeItem("current resume")
+        console.log(resumeData);
+      }
+    }
+  }, []);
 
   const onInputChange = e => {
     const newValue = e.currentTarget.value;
@@ -45,8 +54,11 @@ export function Layout({ newResume, currentId, setCurrentId, props }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    resumeData._id = "";
+    resumeData.createdAt = "";
+    resumeData.creator = "";
     if (currentId === 0) {
+      console.log(resumeData);
       dispatch(createResume(resumeData));
       clear();
     } else {
