@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import { useDispatch, useSelector } from 'react-redux';
@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { getResumesByCreator } from './actions/resumes.js';
 import { deleteResume } from './actions/resumes';
 
-const LoadResume = (setNewResume) => {
+const LoadResume = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const resumes = useSelector(state => state.resumes); // Ensure correct key

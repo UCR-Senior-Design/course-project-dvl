@@ -1,9 +1,7 @@
 import React from 'react'
 import { images } from "./constants";
-import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
-  const navigate = useNavigate();
   return (
     <section className= "bg-dark-hard">
        <footer className="py-10 px-8 text-center bg-gray-800">
