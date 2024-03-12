@@ -6,7 +6,7 @@ import Header from './Header';
 import Footer from './Footer';
 import styled from 'styled-components';
 import ReactMarkdown from 'react-markdown';
-import { jsPDF } from 'jspdf';
+import html2pdf from 'html2pdf.js'; 
 
 const Container = styled.div`
   width: 50%;
@@ -31,16 +31,15 @@ const HomePage = () => {
   const pdfRef = useRef(null);
 
   const handleGeneratePDF = () => {
-    const jspdf = new jsPDF('p', 'pt', 'letter');
-
-    const data = {
-      callback: function (jspdf) {
-        jspdf.save('resume.pdf');
-      },
-      margin: [20, 20, 20, 20],
-      autoPaging: 'text',
+    const options = {
+      margin: 20,
+      filename: 'resume.pdf',
+      image: { type: 'jpeg', quality: 0.98 },
+      html2canvas: { scale: 2 },
+      jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
     };
-    jspdf.html(pdfRef.current, data);
+
+    html2pdf(pdfRef.current, options);
   };
 
   return (
@@ -49,7 +48,7 @@ const HomePage = () => {
       <div>
         <div className="bg-gray-300 py-20 px-12">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold"> Easy Ways to Build a Beautiful Resume </h1>
-          <p className="pt-4 w-60 sm:w-72 md:w-96 leading-6">  Ditch your Google Doc with a better resume crafting experience </p>
+          <p className="pt-4 w-60 sm:w-72 md:w-96 leading-6"> Ditch your Google Doc with a better resume crafting experience </p>
           <div className="flex justify-center items-center">
             <button className="flex justify-center border-2 border-blue-500 px-6 py-2 rounded-full text-blue-500 font-semibold hover:bg-blue-500 hover:text-white" onClick={handleGeneratePDF}>Generate PDF</button>
           </div>
