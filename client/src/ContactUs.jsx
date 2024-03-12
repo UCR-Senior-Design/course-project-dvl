@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
-import { TEInput } from "tw-elements-react";
 import { useNavigate } from "react-router-dom";
-import MainLayout from './MainLayout';
 import HomeNav from './HomeNav';
 import Footer from './Footer';
 

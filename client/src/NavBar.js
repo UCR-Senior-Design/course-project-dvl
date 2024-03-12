@@ -5,6 +5,7 @@ import Templates from './Templates';
 import Signup from './Signup';
 import Login from './Login';
 import ContactUs from "./ContactUs";
+import LoadResume from "./LoadResume";
 
 
 function Navbar(){
@@ -16,6 +17,7 @@ function Navbar(){
                 <Route path="/Login" element={<Login/>}/>
                 <Route path="/Signup" element={<Signup/>}/>
                 <Route path="/ContactUs" element={<ContactUs/>}/>
+                <Route path="/LoadResume" element={<LoadResume/>}/>
             </Routes>
         </nav>
     );
