@@ -8,7 +8,7 @@ import { getResumes } from './actions/resumes';
 import ReactMarkdown from 'react-markdown';
 import html2pdf from 'html2pdf.js'; 
 import styled from 'styled-components';
-
+import rehypeRaw from "rehype-raw";
 
 const Container = styled.div`
   width: 50%;
@@ -67,7 +67,7 @@ const HomePage = () => {
           <Container>
             <h1 className="font-bold text-xl text-center border-b-4 border-gray-500/40">Preview</h1>
             <PreviewArea className='preview overflow-y-scroll border-b-4' ref={pdfRef}>
-              <ReactMarkdown children={markdownText} className="markdown" />
+              <ReactMarkdown children={markdownText} rehypePlugins={[rehypeRaw]} className="markdown" />
             </PreviewArea>
           </Container>
         </div>

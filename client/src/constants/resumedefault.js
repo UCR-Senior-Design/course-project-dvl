@@ -20,7 +20,7 @@ export const defaultResume =
 
 ## Experience & Projects
 
-### Back-End Software Engineer | Name of Application Jan 2022 - Present
+### Back-End Software Engineer | Name of Application <span class="spacer"></span> Jan 2022 - Present
 
 *Backend redesign for reviews module of legacy e-commerce microservice*Javascript | Node.js | Express | PostgreSQL | EC2
 
