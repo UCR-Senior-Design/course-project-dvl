@@ -2,17 +2,32 @@ import React, { useState } from 'react'
 import Header from './Header'
 import EditorContext from "./editorContext"
 import Footer from './Footer'
-import { images } from "./constants";
+import resumeType1P from './assets/resumeType1.svg'
+import resumeType2P from './assets/resumeType2.png'
+import {resumeType1} from './constants/resumeType1'
+import {resumeType2} from './constants/resumeType2'
 import { useNavigate } from 'react-router-dom';
 
 
 const Templates = () => {
+  const navigate = useNavigate();
   const  [markdownText, setMarkdownText] = useState("");
   const contextValue = {
     markdownText,
     setMarkdownText
   };
-  const navigate = useNavigate();
+
+  const handleTemplateClick1 = async () => {
+    localStorage.setItem('1', JSON.stringify({resume: resumeType1}));
+    localStorage.setItem("current resume", JSON.stringify('1'));
+    navigate('/HomePage'); // Navigate to the homepage
+  };
+
+  const handleTemplateClick2 = async () => {
+    localStorage.setItem('2', JSON.stringify({resume: resumeType2}));
+    localStorage.setItem("current resume", JSON.stringify('2'));
+    navigate('/HomePage'); // Navigate to the homepage
+  };
   return (
     <EditorContext.Provider value={contextValue}>
     <Header/>
@@ -22,13 +37,10 @@ const Templates = () => {
                 <br/> <br/> <br/>
                 <div className="flex gap-x-9 items-center margin-center justify-center">
                   <div>
-                    <img src={images.RESUME1} alt="resume1" height={400} width={400} onClick={() => navigate("/HomePage")} ></img> <br/>
+                    <img src={resumeType1P} alt="resume1" height={400} width={400} onClick={() => handleTemplateClick1()} ></img> <br/>
                   </div>
                   <div>
-                    <img src={images.RESUME2} alt="resume2" height={400} width={400} onClick={() => navigate("/HomePage")} ></img> <br/>
-                  </div>
-                  <div>
-                    <img src={images.RESUME3} alt="resume3" height={400} width={400} onClick={() => navigate("/HomePage")} ></img> <br/>
+                    <img src={resumeType2P} alt="resume2" height={400} width={400} onClick={() => handleTemplateClick2()} ></img> <br/>
                   </div>
                 </div>
         </div>
