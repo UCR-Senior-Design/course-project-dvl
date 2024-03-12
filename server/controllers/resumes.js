@@ -16,11 +16,11 @@ const getResumes = asyncHandler(async (req, res) => {
     }
 })
 
-const getResume = asyncHandler(async (req, res) => { 
-    const { id } = req.params;
+const getUserResumes = asyncHandler(async (req, res) => { 
+    const { creator } = req.params;
 
     try {
-        const resume = await Resume.findById(id);
+        const resume = await Resume.find({ creator: creator });
         
         res.status(200).json(resume);
     } catch (error) {
@@ -42,33 +42,19 @@ const createResume = asyncHandler(async (req, res) => {
     }
 })
 
-const updateResume = asyncHandler(async (req, res) => {
-    const { id } = req.params;
-    const { title, message, creator, selectedFile, tags } = req.body;
-    
-    if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No resume with id: ${id}`);
-
-    const updatedResume = { creator, title, message, tags, selectedFile, _id: id };
-
-    await Resume.findByIdAndUpdate(id, updatedResume, { new: true });
-
-    res.json(updatedResume);
-})
-
 const deleteResume = asyncHandler(async (req, res) => {
     const { id } = req.params;
 
     if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No resume with id: ${id}`);
 
-    await Resume.findByIdAndRemove(id);
+    await Resume.findByIdAndDelete(id);
 
     res.json({ message: "Resume deleted successfully." });
 })
 
 module.exports = {
     getResumes,
-    getResume,
+    getUserResumes,
     createResume,
-    updateResume,
-    deleteResume
+    deleteResume,
 };

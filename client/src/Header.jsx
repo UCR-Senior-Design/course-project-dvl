@@ -3,11 +3,6 @@ import { images } from "./constants";
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import * as actionType from './constants/actionTypes';
-// import Templates from './Templates';
-// import {Routes, Route} from 'react-router-dom';
-// import Navbar from './NavBar';
-// import Login from './Login';
-// import Signup from './Signup';
 import { jwtDecode } from "jwt-decode";
 import { googleLogout  } from '@react-oauth/google';
 

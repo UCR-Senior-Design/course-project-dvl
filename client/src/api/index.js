@@ -11,8 +11,8 @@ API.interceptors.request.use((req) => {
 });
 
 export const fetchResumes = () => API.get('/resumes');
+export const fetchResumesByCreator = (creator) => API.get(`/resumes/${creator}`);
 export const createResume = (newResume) => API.post('/resumes', newResume);
-export const updateResume = (id, updatedResume) => API.patch(`/resumes/${id}`, updatedResume);
 export const deleteResume = (id) => API.delete(`/resumes/${id}`);
 
 export const signIn = (formData) => API.post('/user/signin', formData);

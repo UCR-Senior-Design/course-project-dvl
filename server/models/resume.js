@@ -1,11 +1,8 @@
 const mongoose = require('mongoose')
 
 const resumeSchema = mongoose.Schema({
-    title: String,
-    message: String,
-    name: String,
+    resume: String,
     creator: String,
-    selectedFile: String,
     createdAt: {
         type: Date,
         default: new Date(),
