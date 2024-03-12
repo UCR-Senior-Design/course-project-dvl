@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useContext } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { Layout } from './layout/Layout'
 import EditorContext from "./editorContext"
 import { useDispatch } from 'react-redux';

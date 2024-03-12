@@ -1,11 +1,9 @@
 import React, { useState } from 'react'
-import MainLayout from './MainLayout'
-import Navbar from './NavBar'
 import Header from './Header'
 import EditorContext from "./editorContext"
 import Footer from './Footer'
 import { images } from "./constants";
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 
 const Templates = () => {

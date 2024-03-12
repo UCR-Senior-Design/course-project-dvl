@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext  } from 'react'
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import styled from "styled-components"
 import { createResume} from '../actions/resumes';
 import editorContext from "../editorContext";
