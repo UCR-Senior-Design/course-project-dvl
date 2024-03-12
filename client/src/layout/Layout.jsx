@@ -57,7 +57,6 @@ export function Layout({ currentId, setCurrentId, props }) {
     console.log(resumeData);
     const saveResume = _.omit(resumeData, ['createdAt', 'creator', '__v', '_id']);
     if (currentId === 0) {
-      console.log(saveResume);
       dispatch(createResume(saveResume));
       clear();
     } else {

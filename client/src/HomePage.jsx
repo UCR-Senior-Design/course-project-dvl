@@ -1,7 +1,5 @@
 import React, { useState, useEffect, useRef, useContext } from 'react'
 import { Layout } from './layout/Layout'
-import MainLayout from './MainLayout';
-import { Preview } from './layout/Preview'
 import EditorContext from "./editorContext"
 import { useDispatch } from 'react-redux';
 import Header from './Header'
