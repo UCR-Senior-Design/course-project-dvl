@@ -16,18 +16,6 @@ const initialState = { name: '', email: '', password: '' };
 const Signup = () => {
     const [form, setForm] = useState(initialState);
     const dispatch = useDispatch();
-
-    // const [checked, setChecked] = React.useState(false);
-
-    // const handleChange = () => {
-    //     setChecked(!checked);
-    // }
-
-    // const [checked2, setChecked2] = React.useState(false);
-
-    // const handleChange2 = () => {
-    //     setChecked2(!checked2);
-    // }
     const navigate = useNavigate();
 
     const handleSubmit = (e) => {
@@ -79,24 +67,6 @@ const Signup = () => {
                         onSuccess={(response) => googleSuccess(response)}
                         onError={() => console.log('Login Failed')}
                     />
-                {/* <div className="mt-3">
-                    <Checkbox
-                        // style={{transform: "scale(5)",}}
-                        label = " Sign up for our email list?"
-                        value ={checked}
-                        onChange={handleChange}
-                        />
-                </div>
-
-                <div className="mt-3 mb-3">
-                    <Checkbox2
-                        // style={{transform: "scale(5)",}}
-                        label2 = " Remember my email and password"
-                        value2 ={checked2}
-                        onChange2={handleChange2}
-                        />
-                </div> */}
-
                 <div>
                     Need help logging in? {" "}
                     <button className="mt-5 text-blue-600 underline" onClick={() => navigate("/ContactUs")}>Contact us </button>
@@ -115,21 +85,4 @@ const Signup = () => {
     );
 };
 
-// const Checkbox = ({ label, value, onChange }) => {
-//     return (
-//         <label>
-//             <input type="checkbox" checked={value} onChange={onChange} />
-//             {label}
-//         </label>
-//     )
-// }
-
-// const Checkbox2 = ({ label2, value2, onChange2 }) => {
-//     return (
-//         <label>
-//             <input type="checkbox" checked2={value2} onChange2={onChange2} />
-//             {label2}
-//         </label>
-//     )
-// }
 export default Signup;

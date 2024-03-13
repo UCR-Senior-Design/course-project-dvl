@@ -14,7 +14,6 @@ export const getResumes = () => async (dispatch) => {
 export const getResumesByCreator = (creatorId) => async (dispatch) => {
   try {
     const { data } = await api.fetchResumesByCreator(creatorId);
-
     dispatch({ type: FETCH_ALL, payload: data });
   } catch (error) {
     console.log(error);

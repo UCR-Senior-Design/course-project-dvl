@@ -11,7 +11,7 @@ const router = express.Router();
 const auth = require ("../middleware/auth.js")
 
 router.get('/', getResumes);
-router.get('/resumemessage/:creator', getUserResumes);
+router.get('/:creator', getUserResumes);
 router.post('/', auth,  createResume);
 router.delete('/:id', auth, deleteResume);
 
