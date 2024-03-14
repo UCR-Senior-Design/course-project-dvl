@@ -40,7 +40,7 @@ const Header = () => {
             <img src={images.DVLlogo} alt="brand Logo" height={100} width={100} onClick={() => navigate("/HomePage")}></img>
             </div>
             <div className="flex gap-x-9 items-center">
-            {user?.result ? (
+            {user?.result? (
               <div className="flex gap-x-5">
                 <div className= "border-2 border-blue-500 px-6 py-2 rounded-full text-blue-500 font-semibold">{user?.result.name}</div>
                 <button className= "border-2 border-blue-500 px-6 py-2 rounded-full text-blue-500 font-semibold hover:bg-blue-500 hover:text-white" onClick={() => navigate("/Templates")}>Templates</button>

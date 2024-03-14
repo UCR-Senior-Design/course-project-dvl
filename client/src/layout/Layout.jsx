@@ -24,6 +24,7 @@ const TextArea = styled.textarea`
 
 export function Layout({ currentId, setCurrentId, props }) {
   const [resumeData, setResumeData] = useState({ resume: defaultResume});
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')));
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { setMarkdownText } = useContext(editorContext);
@@ -68,7 +69,11 @@ export function Layout({ currentId, setCurrentId, props }) {
     <form className='h-full overflow-auto' autoComplete="off" noValidate onSubmit={handleSubmit}>
       <div className='flex flex-row'>
         <button className= "flex justify-center border-2 border-blue-500 px-6 py-2 ml-40 mb-4 rounded-full text-blue-500 font-semibold hover:bg-blue-500 hover:text-white" type="submit">Save PDF</button>
+        {user?.result? (
         <button className= "flex justify-center border-2 border-blue-500 px-6 py-2 ml-40 mb-4 rounded-full text-blue-500 font-semibold hover:bg-blue-500 hover:text-white" onClick={() => navigate("/LoadResume")}>Load PDF</button>
+        ) : (
+          <div></div>
+        ) }
       </div>
       <h1 className="font-bold text-xl text-center border-b-4 border-gray-500/40">Markdown Text</h1>
       <TextArea name="resume" label="Resume" value={resumeData.resume} onChange={onInputChange}/>
