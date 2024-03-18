@@ -14,8 +14,8 @@ const LoadResume = () => {
   console.log(resumes);
   useEffect(() => {
     const fetchResumes = async () => {
-      if (user?._id) {
-        dispatch(getResumesByCreator(user._id));
+      if (user?.result._id) {
+        dispatch(getResumesByCreator(user.result._id));
       } else if (user?.result.sub) {
         dispatch(getResumesByCreator(user.result.sub));
       } 

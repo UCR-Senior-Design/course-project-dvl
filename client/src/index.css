@@ -14,13 +14,16 @@
 }
 
 .preview {
-    font-size: 17px;
+    font-size: 12px;
+
     /* meta */
     body {
         font-family: Tinos, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
-        font-size: 14px;
         font-weight: 400;
+        size: letter;
+        margin: 0.5in;
     }
+
 
     .spacer {
         margin: 0px auto;
