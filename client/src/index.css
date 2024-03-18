@@ -6,7 +6,8 @@
 
 @page {
     margin: 0.5in;
-    size: letter;
+    size: letter portrait;
+    
 }
 
 .markdown > * {
@@ -20,8 +21,7 @@
     body {
         font-family: Tinos, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
         font-weight: 400;
-        size: letter;
-        margin: 0.5in;
+        font-size: 12px;
     }
 
 

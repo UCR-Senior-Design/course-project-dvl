@@ -22,7 +22,7 @@ export const defaultResume =
 
 ### Back-End Software Engineer | Name of Application <span class="spacer"></span> Jan 2022 - Present
 
-*Backend redesign for reviews module of legacy e-commerce microservice*Javascript | Node.js | Express | PostgreSQL | EC2
+*Backend redesign for reviews module of legacy e-commerce*Javascript | Node.js | Express | PostgreSQL | EC2
 
 - Optimized existing monolithic back-end of an e-commerce website to handle 360,000 requests per minute with low latency **(<20 ms)** and error rate **(<0.1%)** by horizontally microservice to 5 AWS EC2 instances and using a least connections load balancing method with NGINX to increase fault tolerance
 - Leveraged K6 and Loader.io to identify performance bottlenecks, then implemented caching to lower frequency of database retrieval to allow for a throughput increase of **733%**
@@ -30,7 +30,7 @@ export const defaultResume =
 - Mentored peer engineers on front-end development and best practices
 
 
-### Front-End Engineer, UI Lead | Name of ApplicationJan 2021 - Jan 2022
+### Front-End Engineer, UI Lead | Name of Application<span class="spacer"></span>Jan 2021 - Jan 2022
 
 *Remote learning management system web application*  JavaScript | Next.js | MUI | Node.js | Firebase | Jest
 
@@ -39,7 +39,7 @@ export const defaultResume =
 - Implemented server-side rendering with Next.js to improve page load time, achieving Lighthouse SEO score of 100
 
 
-### Front-End Engineer, UI Lead | Name of Application>Jan 2021 - Jan 2022
+### Front-End Engineer, UI Lead | Name of Application<span class="spacer"></span>Jan 2021 - Jan 2022
 
 *Remote learning management system web application*  JavaScript | Next.js | MUI | Node.js | Firebase | Jest
 
@@ -48,7 +48,7 @@ export const defaultResume =
 - Implemented server-side rendering with Next.js to improve page load time, achieving Lighthouse SEO score of 100
 
 
-### Front-End Software Engineer | Name of Application  2020-2021
+### Front-End Software Engineer | Name of Application<span class="spacer"></span>2020-2021
 
 *Single page e-commerce website*  JavaScript | React | Express | EC2 | Jest
 
