@@ -23,7 +23,7 @@ To help new students create a better environment for making Resume
 
 ## Description
 
-Resume 322 is a resume builder, a web application that uses Markdown and CSS to create a resume. Users can export their finished resumes in multiple formats including PDF or HTML. Resume 322 is important because of how much of a struggle it is to format a resume through a normal word processor. The ability to be familiar with Markdown is better as it gives users more control.
+Resume 322 is a resume builder, a web application that uses Markdown and CSS to create a resume. Users can export their finished resumes in PDF. Resume 322 is important because of how much of a struggle it is to format a resume through a normal word processor. The ability to be familiar with Markdown is better as it gives users more control.
 
 ## Getting Started
 
