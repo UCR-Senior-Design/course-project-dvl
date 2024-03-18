@@ -68,9 +68,12 @@ export function Layout({ currentId, setCurrentId, props }) {
   return <Container>
     <form className='h-full overflow-auto' autoComplete="off" noValidate onSubmit={handleSubmit}>
       <div className='flex flex-row'>
-        <button className= "flex justify-center border-2 border-blue-500 px-6 py-2 ml-40 mb-4 rounded-full text-blue-500 font-semibold hover:bg-blue-500 hover:text-white" type="submit">Save PDF</button>
+        
         {user?.result? (
-        <button className= "flex justify-center border-2 border-blue-500 px-6 py-2 ml-40 mb-4 rounded-full text-blue-500 font-semibold hover:bg-blue-500 hover:text-white" onClick={() => navigate("/LoadResume")}>Load PDF</button>
+          <div className='flex flex-row'>
+            <button className= "flex justify-center border-2 border-blue-500 px-6 py-2 ml-40 mb-4 rounded-full text-blue-500 font-semibold hover:bg-blue-500 hover:text-white" type="submit">Save Resume</button>
+            <button className= "flex justify-center border-2 border-blue-500 px-6 py-2 ml-40 mb-4 rounded-full text-blue-500 font-semibold hover:bg-blue-500 hover:text-white" onClick={() => navigate("/LoadResume")}>Load Resume</button>
+          </div>
         ) : (
           <div></div>
         ) }
