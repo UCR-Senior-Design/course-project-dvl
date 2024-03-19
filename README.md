@@ -66,6 +66,14 @@ cd .\client
 ```sh
 npm start
 ```
+3. Go to server folder
+```sh
+cd .\server
+```
+4. Run NPM run dev
+```sh
+npm run dev
+```
 ## Help
 
 Any advice for common problems or issues.
